@@ -12,7 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
     cmake_utils
 )
 
-set(ENABLE_CUDA false)
+set(ENABLE_CUDA true)
 
 if(ENABLE_CUDA)
     message("${Green} Use CUDA")
@@ -24,7 +24,8 @@ if(ENABLE_CUDA)
 #       -gencode arch=compute_50,code=sm_50;
 #       -gencode arch=compute_52,code=sm_52; 
 #       -gencode arch=compute_60,code=sm_60;
-      -gencode arch=compute_61,code=sm_61;
+#       -gencode arch=compute_61,code=sm_61;
+       -gencode arch=compute_75,code=sm_75;
     ) 
     set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS};-O3 -use_fast_math )
     set(CUDA_PROPAGATE_HOST_FLAGS OFF)
